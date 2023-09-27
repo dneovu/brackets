@@ -9,7 +9,7 @@ module.exports = function check(str, bracketsConfig) {
 	for (let i = 0; i < str.length; i++) {
 		const current = str[i]
 		if (Object.values(brackets).includes(current)) { // opened
-			
+
 			if (brackets[current]) { // for equal brackets
 				if (stack[stack.length - 1] === current) {
 					stack.pop() 
@@ -28,5 +28,3 @@ module.exports = function check(str, bracketsConfig) {
 	
 	return stack.length === 0
 }
-
-console.log(module.exports('|()|(||)||', [['(', ')'], ['|', '|']]))
